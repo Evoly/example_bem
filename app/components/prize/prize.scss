@@ -1,0 +1,186 @@
+.prize {
+  display: block;
+  text-align: center;
+  padding-top: 160px;
+  
+  @include screen('desktop-wide') {
+    padding-top: 156px;
+  }
+  
+  @include screen('desktop') {
+    padding-top: 148px;
+  }
+  
+  @include screen('tablet') {
+    padding-top: 136px;
+  }
+  
+  &__heading {
+    @include heading-2-s;
+    
+    @include screen('desktop') {
+      font-size: 48px;
+    }
+    
+    @include screen('tablet') {
+      font-size: 48px;
+    }
+  }
+  
+  &__slider {
+    margin: 106px -118px 0;
+    position: relative;
+    
+    @include screen('desktop-wide') {
+      margin: 88px -82px 0;
+    }
+    
+    @include screen('desktop') {
+      margin: 74px auto 0;
+      max-width: 728px;
+    }
+    
+    @include screen('tablet') {
+      margin-top: 36px;
+    }
+  }
+  
+  &__wrapper {
+    justify-content: space-between;
+  }
+  
+  &__slide {
+    width: 410px;
+    
+    @include screen('desktop-wide') {
+      width: 300px;
+    }
+    
+    @include screen('desktop') {
+      width: 220px;
+    }
+    
+    @include screen('tablet') {
+      width: 100%;
+    }
+  }
+  
+  &__item {
+    @include screen('tablet') {
+      padding-bottom: 36px;
+    }
+  }
+  
+  &__round {
+    width: 175px;
+    height: 175px;
+    border-radius: 1000px;
+    background-color: $color-main;
+    margin: 0 auto;
+    //box-shadow: 0px 6px 11px 1px rgba(0, 0, 0, 0.76);
+    position: relative;
+    
+    @include screen('desktop') {
+      width: 104px;
+      height: 104px;
+      //box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.76);
+    }
+    
+    @include screen('tablet') {
+      width: 112px;
+      height: 112px;
+    }
+  }
+  
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    
+    &_film {
+      width: 80px;
+      height: 80px;
+      
+      @include screen('desktop') {
+        width: 46px;
+        height: 46px;
+      }
+      
+      @include screen('tablet') {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    
+    &_hand {
+      width: 92px;
+      height: 76px;
+      
+      @include screen('desktop') {
+        width: 56px;
+        height: 46px;
+      }
+      
+      @include screen('tablet') {
+        width: 60px;
+        height: 50px;
+      }
+    }
+    
+    &_medal {
+      width: 70px;
+      height: 104px;
+      
+      @include screen('desktop') {
+        width: 40px;
+        height: 60px;
+      }
+      
+      @include screen('tablet') {
+        width: 44px;
+        height: 64px;
+      }
+    }
+  }
+  
+  &__title {
+    @include text-big;
+    line-height: 1.25;
+    margin-top: 16px;
+    
+    @include screen('desktop-wide') {
+      margin-top: 26px;
+    }
+    
+    @include screen('tablet') {
+      font-size: 18px;
+      margin-top: 18px;
+    }
+  }
+  
+  &__button-block {
+    margin-top: 40px;
+    
+    @include screen('desktop-wide') {
+      margin-top: 43px;
+    }
+    
+    @include screen('desktop') {
+      margin-top: 59px;
+    }
+    
+    @include screen('tablet') {
+      margin-top: 28px;
+    }
+  }
+  
+  &__button {
+    @include screen('tablet') {
+      font-size: 15px;
+      padding: 17px 38px;
+    }
+  }
+}

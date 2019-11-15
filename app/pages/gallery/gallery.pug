@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Галлерея'
+
+block content
+    +inner()
+      +e.IMG(src='assets/images/bg-1.jpg').bg
+      +e.blackout
+      +e.scroll-hider
+        +e.scrollable
+          +e.wrapper
+            +header()
+            +gallery().__section
+    +footer()
+    +videocard()#videocard
+    +popups()

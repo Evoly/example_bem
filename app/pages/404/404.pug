@@ -1,0 +1,15 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = '404'
+
+block content
+  +inner()
+    +e.IMG(src='assets/images/bg-4.png').bg
+    +e.scroll-hider
+      +e.scrollable._mob._fh
+        +e.wrapper._mob
+          +header()
+          +notfound().__section
+  +footer()
+  +popups()

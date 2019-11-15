@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Призы'
+
+block content
+  +inner()
+    +e.IMG(src='assets/images/bg-6.jpg').bg
+    +e.blackout
+    +e.scroll-hider
+      +e.scrollable._mob
+        +e.wrapper._mob
+          +header()
+          +prize().__section
+          +brands().__brands
+  +footer()
+  +popups()

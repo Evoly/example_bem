@@ -1,0 +1,111 @@
+@import '../../node_modules/normalize.css/normalize.css';
+@import 'helpers/variables'; // Переменные
+@import 'helpers/mixins'; // Миксины
+@import 'helpers/fonts'; // Шрифты
+@import 'helpers/gradients'; // Градиенты
+@import 'helpers/basics'; // Основные общие стили
+@import 'helpers/text-styles'; // Стили текстов
+@import 'helpers/link-styles'; // Стили ссылок
+@import 'helpers/list-styles'; // Стили списков
+@import '../blocks/**/*';
+@import '../components/**/*';
+@import '../pages/**/*';
+
+body>img {
+  display: none;
+}
+
+.container {
+  width: 1440px;
+  padding: 0 180px;
+  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  
+  @include screen('desktop-wide') {
+    padding: 0 150px;
+  }
+  
+  &_wide {
+    padding: 0 70px;
+    
+    @include screen('desktop-wide') {
+      padding: 0 50px;
+    }
+  }
+  
+  @include screen('desktop') {
+    padding: 0 42px;
+  }
+  
+  @include screen('tablet-wide') {
+    padding: 0 34px;
+  }
+  
+  @include screen('tablet') {
+    padding: 0 20px;
+  }
+}
+
+.js-sr {
+  visibility: hidden;
+}
+
+.hide-xl {
+  @include screen('desktop-wide') {
+    display: none;
+  }
+}
+
+.show-xl {
+  @include screen('desktop-wide', min) {
+    display: none;
+  }
+}
+
+.hide-lg {
+  @include screen('desktop') {
+    display: none;
+  }
+}
+
+.show-lg {
+  @include screen('desktop', min) {
+    display: none;
+  }
+}
+
+.hide-md {
+  @include screen('tablet-wide') {
+    display: none;
+  }
+}
+
+.show-md {
+  @include screen('tablet-wide', min) {
+    display: none;
+  }
+}
+
+.hide-sm {
+  @include screen('tablet') {
+    display: none;
+  }
+}
+
+.show-sm {
+  @include screen('tablet', min) {
+    display: none;
+  }
+}
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}

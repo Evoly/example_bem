@@ -1,0 +1,72 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Главная'
+
+block content
+  +b.index
+    +header()
+    +screen('bg-1.jpg', true)._main
+      +e.content._main
+        +e.P.subheading._main конкурс
+        +e.H1.heading._main короткометражных<br> фильмов
+        +e.P.text._main Это социальный проект для молодых
+          br.show-sm
+          |  специалистов в области кино,
+          br.hide-sm
+          |  где они
+          br.show-sm
+          |  могут снять короткометражный
+          br.show-sm
+          |  фильм и сделать шаг
+          br.hide-sm
+          |  в карьере,
+          br.show-sm
+          |  помогая уличным котам найти дом
+          br
+          |  и своего Человека
+        +button().__button._main.js-fancybox(href='#register') участвовать
+    +screen('bg-2.jpg')#second
+      +e.content._left
+        +e.IMG(src='assets/images/logo-screen-2.png').logo._sc2
+        +e.P.subheading измени взгляд на проблему
+        +e.H2.heading бездомных&nbsp;животных
+        +e.P.text В России кошка считается символом
+          br.show-md
+          |  домашнего
+          br.hide-md
+          |  уюта и тепла. Но только
+          br.show-md
+          |  в Москве более 50000
+          br.hide-md
+          |  котов и кошек
+          br.show-md
+          |  выживают на улицах
+          br.hide-md
+          |  без заботы
+          br.show-md
+          |  и любви человека.
+        +button().__button.js-fancybox(href='#register') участвовать
+    +screen('bg-3.jpg')
+      +e.content._right
+        +e.IMG(src='assets/images/logo-screen-3.png').logo._sc3
+        +e.P.subheading выиграй поездку на
+        +e.H2.heading международный<br> кинофестиваль
+        +e.P.text Сними уникальное социальное
+          br.show-md
+          |  кино,
+          br.hide-md
+          |  которое получит оценку
+          br.show-md
+          |  признанных
+          br.hide-md
+          |  мастеров
+          br.show-md
+          |  кинематографа и станет
+          br.hide-md
+          |  ценным
+          br.show-md
+          |  пополнением в портфолио!
+        +button().__button.js-fancybox(href='#register') участвовать
+    +footer()
+  +popups()

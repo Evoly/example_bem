@@ -1,0 +1,116 @@
+mixin popups()
+  +b.popups&attributes(attributes)
+    +popup()#register
+      +popup-register()
+    +popup()#login
+      +popup-login()
+    +popup()#recovery
+      +popup-recovery()
+
+mixin popup(att)
+  +b.popup&attributes(attributes)
+    +e.container.container
+      +e.A.close
+      +e.scroll-hider
+        +e.wrapper
+          +e.inner(class=att ? '_att': '')
+            +e.content
+              block
+      +e.message
+    if att
+      +e.bottom
+        +e.container.container
+          +e.P.attention Нажимая на кнопку «зарегистрироваться» вы даёте согласие на обработку
+            br.hide-md
+            |  своих персональных данных в&nbsp;соответствии с&nbsp;<a href='#'>политикой ООО «Нестле Россия»</a> по защите персональных данных.
+
+mixin popup-register()
+  +e.P.heading Регистрация участника
+  +e.FORM.form(action='/user/registration?_format=json')
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-user.png').icon-img._def
+        +e.IMG(src='assets/images/input-user-err.png').icon-img._err
+      +input(type='text' name='firstname' placeholder='Ваше имя').popup__input
+      +e.P.error.popup__error Только кириллица
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-user.png').icon-img._def
+        +e.IMG(src='assets/images/input-user-err.png').icon-img._err
+      +input(type='text' name='lastname' placeholder='Ваша фамилия').popup__input
+      +e.P.error.popup__error Только кириллица
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-date.png').icon-img._def
+        +e.IMG(src='assets/images/input-date-err.png').icon-img._err
+      +input(type='date' name='birthday' placeholder='Дата рождения' date-format="dd/mm/yyyy" lang="ru" data-type="birthday").popup__input
+      +e.P.error.popup__error Поле заполнено неверно!
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-mail.png').icon-img._def
+        +e.IMG(src='assets/images/input-mail-err.png').icon-img._err
+      +input(type='email' name='email' placeholder='Ваш e-mail').popup__input
+      +e.P.error.popup__error Поле заполнено неверно!
+    +inputbox().__inputbox
+      +e.icon
+        +icon('phone-call').__icon.__icon-img._def
+        +icon('phone-call').__icon.__icon-img._err
+      +input(type='tel' name='phone' placeholder='Ваш телефон' data-type="phone").popup__input
+      +e.P.error.popup__error Неверный формат!
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-lock.png').icon-img._def
+        +e.IMG(src='assets/images/input-lock-err.png').icon-img._err
+      +input(type='password' name='password1' placeholder='Ваш пароль').popup__input
+      +e.P.error.popup__error Поле заполнено неверно!
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-lock.png').icon-img._def
+        +e.IMG(src='assets/images/input-lock-err.png').icon-img._err
+      +input(type='password' name='password2' placeholder='Повторите пароль').popup__input
+      +e.P.error.popup__error Поле заполнено неверно!
+    +checkbox('agreement', 'yes', ['popup__error', 'Заполните поле']).__checkbox Нажимая на&nbsp;кпопку «Зарегистрировать», я&nbsp;принимаю условия
+      a(href='#') Соглашение о&nbsp;конфиденциальности
+    +checkbox('personal', 'yes', ['popup__error', 'Заполните поле']).__checkbox Даю согласие на&nbsp;обработку моих персональных данных в&nbsp;соответсвие с&nbsp;
+      a(href='#') Политикой ООО«Нестле Россия» по&nbsp;защите персональных данных
+    +checkbox('conditions', 'yes', ['popup__error', 'Заполните поле'])._short.__checkbox Принимаю
+      a(href='#') условия акции
+    +checkbox_class()._short.__checkbox Согласен получать рассылку Purina Friskies®
+    +button('button')._cond.__button Зарегистрироваться
+    +e.form-bottom
+      +e.A.link(href='#login') Войти в личный кабинет
+
+mixin popup-login()
+  +e.P.heading Вход в личный кабинет
+  +e.FORM.form(action='/user?_format=json')
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-mail.png').icon-img._def
+        +e.IMG(src='assets/images/input-mail-err.png').icon-img._err
+      +input(type='email' name='name' placeholder='Ваш e-mail').popup__input
+      +e.P.error.popup__error Поле заполнено неверно!
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-lock.png').icon-img._def
+        +e.IMG(src='assets/images/input-lock-err.png').icon-img._err
+      +input(type='password' name='pass' placeholder='Введите пароль').popup__input
+      +e.P.error.popup__error Неверный пароль!
+    +e.note
+      +e.A.link._small(href='#recovery') Забыли пароль?
+    +button('button')._cond.__button Войти
+    +e.form-bottom
+      +e.A.link(href='#register') Зарегистрироваться на проекте
+
+mixin popup-recovery()
+  +e.P.heading Восстановить пароль
+  +e.P.text Укажите e-mail, указанный при&nbsp;регистрации. Вам будет выслано письмо со ссылкой для&nbsp;смены пароля.
+  +e.FORM.form(action='/user/password?_format=json')
+    +inputbox().__inputbox
+      +e.icon
+        +e.IMG(src='assets/images/input-mail.png').icon-img._def
+        +e.IMG(src='assets/images/input-mail-err.png').icon-img._err
+      +input(type='email' name='login' placeholder='Ваш e-mail').popup__input
+      +e.P.error.popup__error Поле заполнено неверно!
+    +button('button')._cond.__button Отправить
+    +e.form-bottom
+      +e.A.link(href='#login') Войти в личный кабинет

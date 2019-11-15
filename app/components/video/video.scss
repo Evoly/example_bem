@@ -1,0 +1,125 @@
+.video {
+  display: block;
+  padding: 179px 0 75px;
+  
+  @include screen('desktop-wide') {
+    padding-bottom: 80px;
+  }
+  
+  &__form {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    
+    @include screen('desktop-wide') {
+      max-width: 580px;
+    }
+    
+    @include screen('desktop') {
+      max-width: 520px;
+    }
+  }
+  
+  &__heading {
+    @include heading-5;
+    
+    &_inner {
+      margin-top: 31px;
+    }
+  }
+  
+  &__media {
+    margin-top: 35px;
+    
+    & + & {
+      margin-top: 30px;
+      
+      @include screen('desktop-wide') {
+        margin-top: 33px;
+      }
+    }
+    
+    & + .video__inputbox {
+      margin-top: 42px;
+      
+      @include screen('desktop-wide') {
+        margin-top: 39px;
+      }
+    }
+  }
+  
+  &__inputbox {
+    margin-top: 32px;
+    
+    &_untitled {
+      margin-top: 12px;
+    }
+    
+    &_half {
+      display: inline-block;
+      width: 48.5%;
+      margin-top: 0;
+      
+      @include screen('tablet') {
+        width: 100%;
+      }
+      
+      & + & {
+        @include screen('tablet') {
+          margin-top: 38px;
+        }
+      }
+    }
+  }
+  
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 19px;
+    
+    & + & {
+      margin-top: 38px;
+    }
+  }
+  
+  &__bottom {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  &__button {
+    min-width: 280px;
+  }
+  
+  &__error, .media__error {
+    max-width: 350px;
+    
+    @include screen('desktop-wide') {
+      max-width: 300px;
+    }
+    
+    @include screen('desktop') {
+      max-width: 210px;
+    }
+    
+    @include screen('tablet-wide') {
+      left: 0;
+      right: auto;
+      top: calc(100% + 9px);
+      max-width: 100%;
+      transform: none;
+    }
+    
+    &:before {
+      @include screen('tablet-wide') {
+        top: auto;
+        right: auto;
+        left: 10px;
+        bottom: calc(100% - 1px);
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent $color-main transparent;
+      }
+    }
+  }
+}

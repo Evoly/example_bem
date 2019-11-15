@@ -1,0 +1,53 @@
+.notfound {
+  display: block;
+  text-align: center;
+  padding: 210px 0;
+  
+  @include screen('tablet') {
+    padding: 150px 0 80px;
+  }
+  
+  &__subtitle {
+    font-family: $font-second;
+    font-size: 55px;
+    font-weight: 400;
+    letter-spacing: .02em;
+    
+    @include screen('tablet') {
+      font-size: 35px;
+      letter-spacing: 0;
+    }
+  }
+  
+  &__title {
+    color: $color-main;
+    font-family: $font-second;
+    font-size: 139px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    margin-top: 5px;
+    
+    @include screen('tablet') {
+      font-size: 62px;
+      letter-spacing: 0;
+    }
+  }
+  
+  &__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -.01em;
+    margin-top: 34px;
+    
+    @include screen('tablet') {
+      font-size: 16px;
+    }
+    
+    a {
+      color: $color-main;
+      border-bottom: 1px solid $color-main;
+    }
+  }
+}

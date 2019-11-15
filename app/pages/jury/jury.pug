@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Жюри'
+
+block content
+  +inner()
+    +e.IMG(src='assets/images/bg-6.jpg').bg
+    +e.blackout
+    +e.scroll-hider
+      +e.scrollable
+        +e.wrapper
+          +header()
+          +jury().__section
+  +footer()
+  +popups()

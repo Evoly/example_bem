@@ -1,0 +1,392 @@
+.screen {
+  display: flex;
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+  }
+
+  &:before {
+    bottom: 17px;
+    height: 3px;
+    background-color: $color-red;
+  }
+
+  &:after {
+    bottom: 0;
+    height: 17px;
+    background-color: $color-main;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 90px 0 107px;
+    box-sizing: border-box;
+
+    @include screen('desktop') {
+      //padding: 80px 0 97px;
+      padding: 110px 0 127px;
+    }
+
+    @include screen('tablet-wide') {
+      //padding: 35px 0 54px;
+      padding: 95px 0 114px;
+    }
+
+    @include screen('tablet') {
+      padding: 41px 0 67px;
+    }
+
+    &_main {
+      padding: 150px 0 165px;
+
+      @include screen('desktop-wide') {
+        padding: 150px 0 175px;
+      }
+
+      @include screen('desktop') {
+        padding: 150px 0 180px;
+      }
+
+      @include screen('tablet-wide') {
+        padding: 120px 0 150px;
+      }
+
+      @include screen('tablet') {
+        padding: 124px 0 68px;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__bg, &__video {
+    @include fill-img;
+  }
+
+  &__gradient {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: 100%;
+    background: -moz-linear-gradient(top, rgba($color-dark,0) 0%, rgba($color-dark,.4) 100%);
+    background: -webkit-linear-gradient(top, rgba($color-dark,0) 0%,rgba($color-dark,.4) 100%);
+    background: linear-gradient(to bottom, rgba($color-dark,0) 0%,rgba($color-dark,.4) 100%);
+
+    @include screen('tablet', min) {
+      display: none;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+
+    &.container {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 700px;
+    padding-right: 13px;
+    transition: opacity $ease-main;
+
+    @include screen('desktop-wide') {
+      padding-right: 0;
+    }
+
+    @include screen('desktop') {
+      padding-right: 2px;
+    }
+
+    @include screen('tablet-wide') {
+      padding-right: 22px;
+    }
+
+    @include screen('tablet') {
+      padding-right: 0;
+      width: 100%;
+      max-width: none;
+      text-align: center;
+    }
+
+    &_main {
+      text-align: center;
+      padding: 0;
+      margin-top: 50px;
+    }
+
+    &_left {
+      margin-left: 0;
+    }
+
+    &_right {
+      margin-right: 0;
+
+      @include screen('desktop-wide') {
+        margin-right: -17px;
+      }
+
+      @include screen('desktop') {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__logo {
+
+    &_sc2 {
+      width: 266px;
+
+      @include screen('desktop') {
+        width: 209px;
+      }
+
+      @include screen('tablet-wide') {
+        width: 148px;
+      }
+    }
+
+    &_sc3 {
+      width: 281px;
+
+      @include screen('desktop') {
+        width: 220px;
+      }
+
+      @include screen('tablet-wide') {
+        width: 156px;
+      }
+    }
+
+    & + .screen__subheading {
+      margin-top: 30px;
+
+      @include screen('desktop-wide') {
+        margin-top: 22px;
+      }
+
+      @include screen('desktop') {
+        margin-top: 18px;
+      }
+
+      @include screen('tablet') {
+        margin-top: 26px;
+      }
+    }
+  }
+
+  &__subheading {
+    @include heading-4;
+
+    &_main {
+      @include heading-3;
+    }
+  }
+
+  &__heading {
+    @include heading-2;
+    display: inline-block;
+    color: $color-main;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color-main;
+
+    @include screen('tablet-wide') {
+      margin-top: 8px;
+    }
+
+    @include screen('tablet') {
+      padding-bottom: 7px;
+      margin-top: 2px;
+    }
+
+    &_main {
+      @include heading-1;
+      margin-top: -5px;
+      padding-bottom: 0;
+      border-bottom: 0;
+
+      @include screen('desktop') {
+        margin-top: -1px;
+      }
+
+      @include screen('tablet') {
+        margin-top: 1px;
+      }
+    }
+  }
+
+  &__text {
+    @include text;
+    margin-top: 24px;
+
+    @include screen('tablet-wide') {
+      margin-top: 16px;
+    }
+
+    @include screen('tablet') {
+      margin-top: 3px;
+    }
+
+    &_main {
+      @include text-big;
+      margin-top: 31px;
+
+      @include screen('desktop') {
+        margin-top: 13px;
+      }
+
+      @include screen('tablet') {
+        margin-top: 11px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 33px;
+
+    @include screen('desktop') {
+      margin-top: 28px;
+    }
+
+    @include screen('tablet-wide') {
+      margin-top: 25px;
+    }
+
+    @include screen('tablet') {
+      margin-top: 18px;
+    }
+
+    &_main {
+      margin-top: 43px;
+
+      @include screen('desktop-wide') {
+        margin-top: 33px;
+      }
+
+      @include screen('desktop') {
+        margin-top: 25px;
+      }
+
+      @include screen('tablet') {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  &__scroll-button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 52px;
+    margin: auto;
+    width: 27px;
+    height: 62px;
+    z-index: 2;
+    font-size: 0;
+
+    @include screen('tablet') {
+      width: 30px;
+      height: 30px;
+      bottom: 27px;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &__scroll-icon {
+    width: 100%;
+    height: 100%;
+
+    @include screen('tablet') {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 10px;
+      height: 12px;
+    }
+  }
+
+  &__brand-link {
+    position: absolute;
+    left: calc(50% - 650px);
+    top: 51px;
+    z-index: 2;
+
+    @include screen('desktop-wide') {
+      left: 50px;
+    }
+
+    @include screen('desktop') {
+      left: 42px;
+    }
+
+    @include screen('tablet-wide') {
+      left: 34px;
+    }
+
+    @include screen('tablet') {
+      left: 20px;
+      top: 66px;
+    }
+  }
+
+  &__brand-logo {
+    width: 121px;
+
+    @include screen('desktop-wide') {
+      width: 110px;
+    }
+
+    @include screen('desktop') {
+      width: 86px;
+    }
+
+    @include screen('tablet-wide') {
+      width: 64px;
+    }
+  }
+
+  &.is-blur {
+
+    filter: blur(10px);
+
+    .screen__image {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter:blur(10px);
+      filter: blur(10px);
+    }
+
+    .screen__content,
+    .screen__brand-link {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

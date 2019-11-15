@@ -1,0 +1,42 @@
+.link {
+  $b: &;
+  @include link;
+
+  &__text {
+    #{$b}_dashed & {
+      @include link-dashed;
+    }
+  }
+
+  &_icon {
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  &_small {
+    @include link-small;
+  }
+  
+  &_xsmall {
+    @include link-xsmall;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    transition: fill $ease-main;
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+    fill: $color-border;
+    @include link-disabled;
+  }
+}

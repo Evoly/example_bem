@@ -1,0 +1,38 @@
+mixin media-video()
+  +b.media&attributes(attributes)
+    +e.IMG(src='assets/images/media-shadow.png').shadow
+    +e.start
+      +e.icon-block
+        +e.IMG(src='assets/images/icon-video.png').icon
+      +button('label').__button Загрузить видео
+        input(type='file' name='videofile').media__input
+      +e.P.text Выберите видео файл вашей конкурсной работы. Обратите внимание, что видео должно быть в формате .mov или .mp4 и весом не более 200&nbsp;мб.
+    +e.load
+      +e.VIDEO(poster='assets/images/media-video.jpg').media
+        +e.SOURCE(src='assets/images/test.mp4')
+      +e.controls
+        +e.control._left._red
+          +icon('play').__control-icon._play
+        +e.control
+          +icon('change').__control-icon._change
+        +e.control
+          +icon('remove').__control-icon._remove
+    +e.P.error Загрузите видео
+
+mixin media-photo()
+  +b.media&attributes(attributes)
+    +e.IMG(src='assets/images/media-shadow.png').shadow
+    +e.start
+      +e.icon-block
+        +e.IMG(src='assets/images/icon-photo.png').icon
+      +button('label').__button Загрузить фото
+        input(type='file' name='photofile').media__input
+      +e.P.text Выберите файл, который будет использоваться в качестве обложки вашей работы. Файл должен иметь соотношение сторон 16:9 и весить не более 5&nbsp;мб.
+    +e.load
+      +e.IMG(src='assets/images/media-photo.jpg').media
+      +e.controls
+        +e.control
+          +icon('change').__control-icon._change
+        +e.control
+          +icon('remove').__control-icon._remove
+    +e.P.error Загрузите фото

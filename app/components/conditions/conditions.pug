@@ -1,0 +1,54 @@
+mixin conditions()
+  +b.conditions&attributes(attributes)
+    .container
+      +e.H2.heading Условия конкурса
+      +e.slider.swiper-container.js-slider
+        +e.IMG(src='assets/images/cond-line.svg').line.hide-xl
+        +e.IMG(src='assets/images/cond-line-xl.svg').line.show-xl.hide-lg
+        +e.IMG(src='assets/images/cond-line-lg-l.svg').line._left.show-lg
+        +e.IMG(src='assets/images/cond-line-lg-r.svg').line._right.show-lg
+        +e.wrapper.swiper-wrapper
+          +e.slide.swiper-slide
+            +e.item._left
+              +e.round
+                +icon('camera').__icon._camera
+              +e.P.time С 27 июля
+                br.show-lg.hide-sm
+                |  по 02 сентября 2018&nbsp;г.
+              +e.P.description Загрузите работу
+                br.show-lg.hide-sm
+                |  на сайт конкурса
+          +e.slide.swiper-slide
+            +e.item._mid
+              +e.round
+                +icon('list').__icon._list
+              +e.P.time До 9 сентября 2018&nbsp;г.
+              +e.P.description Жюри конкурса оценит все фильмы и&nbsp;отберёт 5 финалистов
+          +e.slide.swiper-slide
+            +e.item._right
+              +e.round
+                +icon('medal').__icon._medal
+              +e.P.time С 9 по 16 сентября 2018&nbsp;г.
+              +e.P.description Бренд-команда
+                br.show-lg.hide-sm
+                |  Friskies®
+                br.hide-lg
+                |  выберет
+                br.show-lg.hide-sm
+                |  победителя конкурса
+        .slider-dots
+      +e.P.text 20 сентября 2018&nbsp;г. пройдет торжественная церемония, где будет оглашен <nobr>фильм-победитель,</nobr> а&nbsp;также названы лауреаты призов журналистских и&nbsp;зрительских симпатий.
+      +e.P.text &nbsp;&nbsp; Как стать участником проекта? Снять и загрузить на сайт 1-минутный фильм о рыжем уличном коте, который встретил своего человека и нашел новый дом.  Для успешного участия следует придерживаться общей сюжетной линии, указанной в презентации проекта.
+      +e.docs
+        //+e.doc
+          +e.A(href='#').doc-link
+            +e.IMG(src='assets/images/doc.png').doc-icon
+            +e.SPAN.doc-title Полные правила
+        +e.doc
+          +e.A(href='/Purina_Friskies.pdf').doc-link
+            +e.IMG(src='assets/images/doc.png').doc-icon
+            +e.SPAN.doc-title Презентация проекта
+        +e.doc
+          +e.A(href='#'  target="_blank").doc-link
+            +e.IMG(src='assets/images/doc.png').doc-icon
+            +e.SPAN.doc-title Правила конкурса

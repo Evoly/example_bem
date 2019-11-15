@@ -1,0 +1,70 @@
+mixin jury()
+  +b.jury&attributes(attributes)
+    .container
+      +e.H2.heading Жюри
+      +e.P.text Фильмы будут оценивать как профессионалы
+        br.hide-sm
+        |  в&nbsp;области кино, так и люди, которые помогают животным каждый&nbsp;день
+      +e.slider.swiper-container.js-slider
+        +e.wrapper.swiper-wrapper
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-1.jpg').photo
+              +e.P.name Анастасия Макеева
+              +e.P.desc Актриса мюзиклов, кино и&nbsp;сериалов. Любящая хозяйка двух британских кошек
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-2.jpg').photo
+              +e.P.name Алиса Гребенщикова
+              +e.P.desc Актриса и&nbsp;телеведущая. Фильмография – более 70 работ и&nbsp;проектов. Призы за лучшую женскую роль в&nbsp;фестивалях авторского кино.
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-3.jpg').photo
+              +e.P.name Алена Рубинштейн
+              +e.P.desc Режиссёр кино и&nbsp;театра. Призёр российских и&nbsp;международных фестивалей
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-4.jpg').photo
+              +e.P.name Оганнес Гаспарян
+              +e.P.desc Креативный продюсер. Ведет специализированные семинары по продюсированию визуального контента. Только за прошлый год его продакшн-студия "GOTVision" создала почти 500 видео-роликов, в том числе для проектов федерального масштаба
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-5.jpg').photo
+              +e.P.name Валерия Ланская
+              +e.P.desc Актриса театра и кино, солистка московских мюзиклов, телеведущая
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-6.jpg').photo
+              +e.P.name Сидорова Елена
+              +e.P.desc Руководитель Центра реабилитации временно бездомных животных «Юна»
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-7.jpg').photo
+              +e.P.name Буран Оксана
+              +e.P.desc Менеджер по связям с общественностью и PR Центр реабилитации временно бездомных животных «Юна»
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-8.jpg').photo
+              +e.P.name Георгий Хачатурович Мартиросьян
+              +e.P.desc Заслуженный артист РФ
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-9.jpg').photo
+              +e.P.name Михаил Местецкий
+              +e.P.desc Сценарист, режиссер (автор сценария "Легенда номер 17", "Хороший мальчик", режиссер и сценарист "Тряпичный союз")
+          +e.slide.swiper-slide
+            +e.item
+              +e.avatar
+                +e.IMG(src='assets/images/jury-10.jpg').photo
+              +e.P.name Нигина Сайфуллаева
+              +e.P.desc Режиссер, сценарист ("Как меня зовут", "Про любовь. Только для взрослых")
+        .slider-dots.slider-dots_cond

@@ -1,0 +1,45 @@
+mixin header()
+  +b.HEADER.header&attributes(attributes)
+    +e.top
+      +e.A(href='https://www.purina.ru/').top-link
+        +e.IMG(src='assets/images/logo-purina.svg').top-logo
+    +e.main
+      +e.container.container._wide
+        +e.logos
+          +e.A(href='https://www.friskies.ru/films/').logo-link
+            +e.IMG(src='assets/images/logo-friskies.png').logo._main
+          +e.IMG(src='assets/images/logo-screen-1.png').logo._screen
+        +e.mob-bg
+        +e.menu-wrapper
+          +e.menu
+            +e.menu-item
+              +link().__link._menu(href='jury.html') жюри
+            +e.menu-item
+              +link().__link._menu(href='prize.html') приз
+            +e.menu-item
+              +link().__link._menu(href='gallery.html') галерея
+            +e.menu-item
+              +link().__link._menu(href='conditions.html') условия
+            +e.menu-item.__mob-login
+              +link().__link._menu.js-fancybox(href='#login') войти
+          +e.__label
+            +e.IMG(src='assets/images/button.png')
+        +e.account
+          +e.login
+            +link-icon('user').__link.js-fancybox(href='#login') войти
+          +e.user
+            +e.user-top
+              +e.avatar
+                +e.IMG(src='assets/images/avatar.png').user-img
+              +e.P.user-name Мария<br> Павлова
+              +e.SPAN.user-arrow
+            +e.user-menu
+              +e.user-item
+                +link-icon('user')._small.__user-link(href='profile.html') профиль
+              +e.user-item
+                +link-icon('cam')._small.__user-link.is-active(href='video.html') моя работа
+              +e.user-item.__logout
+                +link-icon('logout')._small.__user-link(href='#' data-type='logout') выйти
+        +e.SPAN.back-arrow
+        +e.SPAN.burger
+          +e.SPAN.burger-line

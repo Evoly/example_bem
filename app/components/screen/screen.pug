@@ -1,0 +1,18 @@
+mixin screen(bg, main)
+  +b.screen&attributes(attributes)
+    +e.image
+      if main
+        +e.VIDEO(poster='assets/images/'+bg).video
+      else
+        +e.IMG(src='assets/images/'+bg).bg
+    +e.gradient
+    +e.wrapper(class=main ? '_main' : '')
+      +e.container.container
+        block
+    if main
+      +e.A(href='#second').scroll-button.js-anchor
+        +e.IMG(src='assets/images/mouse.png').scroll-icon.hide-sm
+        +e.IMG(src='assets/images/mouse-sm.png').scroll-icon.show-sm
+    else
+      +e.A(href='https://www.friskies.ru/films/').brand-link
+        +e.IMG(src='assets/images/logo-friskies.png').brand-logo

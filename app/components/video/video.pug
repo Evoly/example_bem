@@ -1,0 +1,39 @@
+mixin video()
+  +b.video&attributes(attributes)
+    .container
+      +e.FORM.form
+        +e.P.heading Моя работа
+        +media-video().__media
+        +media-photo().__media
+        +inputbox().__inputbox
+          +e.P.title Название
+          +input(type='text' name='title' placeholder='Добавьте название фильма')._xsmall.__input.video__input
+          +e.P.error.video__error Добавьте название фильма
+        +inputbox().__inputbox
+          +e.P.title Описание
+          +textarea(name='description' placeholder='Добавьте описание фильма').__textarea.video__input
+          +e.P.error.video__error Заполните поле
+        +inputbox().__inputbox._untitled
+          +textarea(name='creation' placeholder='Расскажите, как создавался ваш фильм?').__textarea._untitled.video__input
+          +e.P.error.video__error Заполните поле
+        +e.P.heading._inner Творческая группа:
+        +e.row
+          +inputbox().__inputbox._half
+            +e.P.title Режиссер
+            +input(type='text' name='director' placeholder='Фамилия Имя Отчество')._small.__input.video__input
+            +e.P.error.video__error Заполните поле
+          +inputbox().__inputbox._half
+            +e.P.title Сценарий
+            +input(type='text' name='scenario' placeholder='Фамилия Имя Отчество')._small.__input.video__input
+            +e.P.error.video__error Заполните поле
+        +e.row
+          +inputbox().__inputbox._half
+            +e.P.title Оператор
+            +input(type='text' name='operator' placeholder='Фамилия Имя Отчество')._small.__input.video__input
+            +e.P.error.video__error Заполните поле
+          +inputbox().__inputbox._half
+            +e.P.title Монтаж
+            +input(type='text' name='mount' placeholder='Фамилия Имя Отчество')._small.__input.video__input
+            +e.P.error.video__error Заполните поле
+        +e.bottom
+          +button('button').__button Сохранить

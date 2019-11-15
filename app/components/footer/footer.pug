@@ -1,0 +1,60 @@
+mixin footer()
+  +b.FOOTER.footer&attributes(attributes)
+    +e.container.container
+      +e.left
+        +e.IMG(src='assets/images/logo-purina-small.svg').logo
+      +e.center
+        +e.menu
+          +e.menu-item
+            +link()._xsmall.__link(href='jury.html') жюри
+          +e.menu-item
+            +link()._xsmall.__link(href='prize.html') приз
+          +e.menu-item
+            +link()._xsmall.__link(href='#') галерея
+          +e.menu-item
+            +link()._xsmall.__link(href='conditions.html') условия
+          +e.menu-item
+            +link()._xsmall.__link.js-fancybox(href='#login') войти
+        +e.item
+          +e.P.title горячая линия:
+          +e.A(href='tel:88002008900').tel 8 800 200 8 900
+          br
+          br
+          +link(href='mailto:contact@ru.nestle.com').__mail contact@ru.nestle.com
+        +e.item
+          +e.P.title поделиться:
+          +e.social
+            +e.social-button._fb
+              .fb-share-button(data-href="https://friskies.ru/films" data-layout="button" data-size="large" data-mobile-iframe="false")
+                a(target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffriskies.ru%2Ffilms&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore") Поделиться
+              +e.social-bg
+              +icon('fb').__social-icon._fb
+            +e.social-button._vk
+              | <script type="text/javascript">
+              | document.write(VK.Share.button({url: "https://friskies.ru/films"},{type: "custom", text: "<img src=\"https://vk.com/images/share_32.png\" width=\"32\" height=\"32\" />"}));
+              | </script>
+              +e.social-bg
+              +icon('vk').__social-icon._vk
+            +e.social-button._ok
+              #ok_shareWidget
+              script.
+                !function (d, id, did, st, title, description, image) {
+                  var js = d.createElement("script");
+                  js.src = "https://connect.ok.ru/connect.js";
+                  js.onload = js.onreadystatechange = function () {
+                  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                    if (!this.executed) {
+                      this.executed = true;
+                      setTimeout(function () {
+                        OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+                      }, 0);
+                    }
+                  }};
+                  d.documentElement.appendChild(js);
+                }(document,"ok_shareWidget","https://friskies.ru/films",'{"sz":150,"st":"oval"}',"","","");
+              +e.social-bg
+              +icon('ok').__social-icon._ok
+        +e.P.copyright Purina 2018 ®<br> Владелец товарных знаков: Société des Produits Nestlé S.A.
+      +e.right
+        +e.A(href='https://www.friskies.ru/films/').brand-link
+          +e.IMG(src='assets/images/logo-friskies.png').brand-logo

@@ -1,0 +1,44 @@
+mixin profile()
+  +b.profile&attributes(attributes)
+    .container
+      +e.forms
+        +e.P.heading Профиль
+        +e.FORM(action='/user?_format=json').form#profile
+          +e.top
+            +e.avatar
+              +e.IMG(src='assets/images/avatar.png').photo
+            +e.LABEL.upload Загрузить фото
+              +e.INPUT(type='file' name='avatar')
+          +inputbox().__inputbox
+            +input(type='text' name='firstname' placeholder='Имя' value='Мария' data-required data-type="firstname")._small.profile__input
+            +e.P.error.profile__error Только кириллица
+          +inputbox().__inputbox
+            +input(type='text' name='lastname' placeholder='Фамилия' value='Павлова' data-required data-type="lastname")._small.profile__input
+            +e.P.error.profile__error Только кириллица
+          +inputbox().__inputbox
+            +input(type='text' name='patronymic' placeholder='Отчество' data-type="patronymic")._small.profile__input.js-notrequire
+            +e.P.error.profile__error Только кириллица
+          +inputbox().__inputbox
+            +input(type='date'  name='birthday' placeholder='Дата рождения' value='06.05.1991' data-required data-type="birthday" date-format="dd/mm/yyyy" lang="ru")._small.profile__input
+            +e.P.error.profile__error Поле заполнено неверно!
+          +inputbox().__inputbox
+            +input(type='text' name='knowfrom' placeholder='Откуда узнали о проекте')._small.profile__input.js-notrequire
+            +e.P.error.profile__error Поле заполнено неверно!
+          +inputbox().__inputbox
+            +input(type='email' name='email' placeholder='E-mail' value='ivan@email.ru' data-required data-type="email")._small.profile__input
+            +e.P.error.profile__error Поле заполнено неверно!
+          +inputbox().__inputbox
+            +input(type='tel' name='phone' placeholder='Ваш телефон' value='' data-required data-type="phone")._small.profile__input
+            +e.P.error.profile__error Неверный формат!
+          +e.form-actions.form-actions
+            +button('button') Сохранить
+        +e.__message
+        +e.FORM(action='/user/password?_format=json').form#password
+          +inputbox().__inputbox._low.form-no-label
+            +input(type='password' name='old_password' placeholder='Старый пароль' data-required data-type='old_password' )._small.profile__input
+            +e.P.error.profile__error Поле заполнено неверно!
+          +inputbox().__inputbox._low.form-no-label
+            +input(type='password' name='pass' placeholder='Новый пароль' data-required data-type='newpass')._small.profile__input
+            +e.P.error.profile__error Поле заполнено неверно!
+          +button('button')._cond.__button Сменить пароль
+        +e.__message

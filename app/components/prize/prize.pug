@@ -1,0 +1,35 @@
+mixin prize()
+  +b.prize&attributes(attributes)
+    .container
+      +e.H2.heading Призы
+      +e.slider.swiper-container.js-slider
+        +e.wrapper.swiper-wrapper
+          +e.slide.swiper-slide
+            +e.item
+              +e.round
+                +icon('film').__icon._film
+              +e.P.title Поездка на главный
+                br
+                |  международный кинофестиваль в&nbsp;2019&nbsp;г.
+          +e.slide.swiper-slide
+            +e.item
+              +e.round
+                +icon('hand').__icon._hand
+              +e.P.title Активное продвижение фильма в&nbsp;интернете в&nbsp;рамках рекламной кампании бренда
+                br.hide-xl
+                br.show-lg
+                |  Purina Friskies®
+          +e.slide.swiper-slide
+            +e.item
+              +e.round
+                +icon('medal').__icon._medal
+              +e.P.title Призы журналистских
+                br
+                |  и зрительских симпатий
+                br.show-xl
+                |  для лидеров
+                br.hide-xl
+                |  общего голосования
+        .slider-dots
+      +e.button-block
+        +button().__button.js-fancybox(href='#register') Участвовать

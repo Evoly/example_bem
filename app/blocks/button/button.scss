@@ -1,0 +1,41 @@
+.button {
+  @include text-button;
+
+  display: inline-block;
+  padding: 17px 38px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: $color-red;
+  transition: opacity $ease-main;
+  cursor: pointer;
+  border-radius: 1000px;
+  text-align: center;
+  color: $color-basic;
+
+  @include screen('tablet') {
+    padding: 11px 24px 13px;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+
+  &:hover,
+  &.is-active {
+    opacity: .8;
+  }
+
+  &_cond {
+    @include text-button-cond;
+    padding: 17px 25px;
+  }
+  &_send {
+    width: 180px;
+    height: 60px;
+    padding-left: 5px;
+    padding-right: 5px;    
+    @include text-button-cond;
+  }
+}

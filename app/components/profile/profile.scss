@@ -1,0 +1,134 @@
+.profile {
+  display: block;
+  padding: 179px 0 50px;
+  text-align: center;
+
+  &__forms {
+    margin: 0 auto;
+    max-width: 280px;
+  }
+
+  &__heading {
+    @include heading-5;
+  }
+
+  &__form {
+    margin-top: 28px;
+
+    & + & {
+      margin-top: 15px;
+    }
+  }
+
+  &__avatar {
+    width: 98px;
+    height: 98px;
+    border-radius: 1000px;
+    background-color: $color-main;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  &__photo {
+    @include fill-img;
+  }
+
+  &__upload {
+    display: inline-block;
+    color: $color-main;
+    border: 1px solid $color-main;
+    border-radius: 1000px;
+    transition: opacity $ease-main;
+    cursor: pointer;
+    position: relative;
+    margin-top: 20px;
+    padding: 7px;
+    margin-bottom: 15px;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__inputbox {
+    & + & {
+      margin-top: 30px;
+    }
+
+    &_low,
+    .form-no-label {
+      & + & {
+        margin-top: 17px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 38px;
+    min-width: 280px;
+  }
+
+  &__error {
+    text-align: left;
+    max-width: 360px;
+
+    @include screen('desktop-wide') {
+      max-width: 310px;
+    }
+
+    @include screen('desktop') {
+      max-width: 290px;
+    }
+
+    @include screen('tablet-wide') {
+      max-width: 170px;
+    }
+
+    @include screen('tablet') {
+      left: 0;
+      right: auto;
+      top: calc(100% + 9px);
+      max-width: 100%;
+      transform: none;
+    }
+
+    &:before {
+      @include screen('tablet') {
+        top: auto;
+        right: auto;
+        left: 10px;
+        bottom: calc(100% - 1px);
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent $color-main transparent;
+      }
+    }
+  }
+  .form-no-label {
+    position: relative;
+
+    &.is-error  {
+      .inputbox__error {
+          opacity: 1;
+      }
+    }
+  }
+  .form-actions {
+    .button {
+      margin-top: 38px;
+      min-width: 280px;
+      letter-spacing: .2em;
+      padding: 17px 25px;
+    }
+  }
+}

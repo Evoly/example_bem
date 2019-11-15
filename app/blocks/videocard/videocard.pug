@@ -1,0 +1,36 @@
+mixin videocard()
+  +b.videocard&attributes(attributes)
+    +e.container.container
+      +e.A.close
+      +e.scroll-hider
+        +e.wrapper
+          +e.inner(class=att ? '_att': '')
+            +e.content
+              +e.H2.heading Рыжий кот
+              +e.video
+                +e.VIDEO(poster='assets/images/media-video.jpg' src='assets/images/test.mp4').media#video
+                +e.controls
+                  +e.__control_play.js-control_play
+                    +icon('play').__icon._play
+                  +e.__control_play.js-control_pause
+                    +icon('pause').__icon._pase
+              +e.item
+                +e.sub-heading Голосование
+                +e.rating-wrapper
+                  +e.rating
+                    +e.SPAN.rating-num.js-rating 1
+                    +e.SPAN.rating-num.js-rating 2
+                    +e.SPAN.rating-num.js-rating 3
+                    +e.SPAN.rating-num.js-rating 4
+                    +e.SPAN.rating-num.js-rating 5
+                  +e.message
+                    +e.IMG(src='assets/images/checked.png').icon-img
+                    +e.P Спасибо! Ваш голос учтен.
+              +e.item
+                +e.sub-heading Описание
+                +e.P.text Главная героиня одноименной анимационной советской картины никогда не испытывала добрых, человеческих чувств. Будучи дочерью Деда Мороза, Снегурочка имела сердце изо льда, но подарок любящей матери Весны позволил девушке полностью раскрыть свою душу и погрузиться в увлекательный мир. <br>Ее трагичная история, когда пламя растопило лед не только абстрактный, но и материальный (тело Снегурочки было из данного элемента, которому страшен огонь) отображает, какими на самом деле могут быть простые чувства. От них мы теряем голову, рассудок мутнеет, и человек начинает совершать глупые поступки.
+              +e.__item
+                +e.sub-heading Отзыв
+                +e.FORM.feedback(action='/user?_format=json')
+                  +e.TEXTAREA(name="message" placeholder='Введите текст' rows='5').input
+                  +button('button')._send.js-submit Отправить

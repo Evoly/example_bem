@@ -1,0 +1,122 @@
+.inner {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  &:before {
+    bottom: 17px;
+    height: 3px;
+    background-color: $color-red;
+  }
+  
+  &:after {
+    bottom: 0;
+    height: 17px;
+    background-color: $color-main;
+  }
+  
+  &__bg {
+    @include fill-img;
+  }
+  
+  &__blackout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .54;
+  }
+  
+  &__scroll-hider {
+    overflow: hidden;
+  }
+  
+  &__scrollable {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-right: -20px;
+    padding-right: 20px;
+    max-height: 100vh;
+    position: relative;
+    
+    &_mob {
+      @include screen('tablet', min) {
+        display: flex;
+        //min-height: 100vh;
+        max-height: none;
+      }
+    }
+    
+    &_fh {
+      @include screen('tablet', min) {
+        min-height: 100vh;
+      }
+    }
+  }
+  
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    
+    &_mob {
+      @include screen('tablet', min) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    }
+  }
+  
+  &__section {
+    width: 100%;
+    position: relative;
+    transition: opacity $ease-main;
+  }
+  
+  &__brands {
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 47px;
+    margin-bottom: 20px;
+    transition: opacity $ease-main;
+    
+    @include screen('desktop-wide') {
+      margin-top: 49px;
+    }
+    
+    @include screen('tablet') {
+      margin-top: 29px;
+    }
+  }
+  
+  &.is-blur {
+    
+    &:before,
+    &:after,
+    .inner__bg,
+    .inner__blackout {
+      filter: blur(10px);
+    }
+    
+    .inner__scrollable {
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .inner__section,
+    .inner__brands {
+      opacity: 0;
+    }
+  }
+}

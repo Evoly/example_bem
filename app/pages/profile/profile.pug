@@ -1,0 +1,15 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Профиль'
+
+block content
+  +inner()
+    +e.IMG(src='assets/images/bg-4.png').bg
+    +e.scroll-hider
+      +e.scrollable
+        +e.wrapper
+          +header()
+          +profile().__section
+  +footer()
+  +popups()

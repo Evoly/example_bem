@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Sitemap'
+
+block content
+  +b.sitemap
+    .container
+      +e.list
+        +link(href="index.html") Главная (index.html)
+        +link(href="video.html") Видео (video.html)
+        +link(href="conditions.html") Условия (conditions.html)
+        +link(href="prize.html") Призы (prize.html)
+        +link(href="jury.html") Жюри (jury.html)
+        +link(href="profile.html") Профиль (profile.html)
+        +link(href="gallery.html") Галерея (gallery.html)
+        +link(href="404.html") 404 (404.html)

@@ -1,0 +1,208 @@
+.media {
+  display: block;
+  border: 1px dashed #fff;
+  text-align: center;
+  position: relative;
+  
+  &__shadow {
+    position: absolute;
+    width: 110%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 30%);
+    transition: opacity $ease-main;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  &__start {
+    padding: 37px;
+    transition: opacity $ease-main;
+    
+    @include screen('desktop-wide') {
+      padding: 39px;
+    }
+    
+    @include screen('desktop') {
+      padding: 22px;
+    }
+  }
+  
+  &__icon-block {
+    margin: 47px auto 0;
+    width: 73px;
+    height: 52px;
+    position: relative;
+    opacity: .4;
+    
+    @include screen('desktop-wide') {
+      margin: 9px auto 0;
+    }
+  }
+  
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  &__button {
+    position: relative;
+    margin-top: 32px;
+    padding: 17px 24px;
+  }
+  
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  &__text {
+    @include text-small;
+    margin: 23px auto 0;
+    max-width: 420px;
+  }
+  
+  &__load {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ease-main;
+  }
+  
+  &__media {
+    @include fill-img;
+  }
+  
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  &__control {
+    width: 47px;
+    height: 47px;
+    background-color: #000;
+    margin-left: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    
+    &:hover {
+      opacity: .8;
+    }
+    
+    &_red {
+      background-color: $color-red;
+    }
+    
+    &_left {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  
+  &__control-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    fill: #fff;
+    max-width: 100%;
+    max-height: 100%;
+    
+    &_play {
+      width: 21px;
+      height: 27px;
+    }
+    
+    &_change {
+      width: 24px;
+      height: 33px;
+    }
+    
+    &_remove {
+      width: 27px;
+      height: 27px;
+    }
+  }
+  
+  &__error {
+    position: absolute;
+    right: -28px;
+    top: 50%;
+    transform: translate(100%, -50%);
+    padding: 13px 21px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ease-main;
+    background-color: $color-main;
+    border-radius: 6px;
+    color: #000;
+    font-size: 15px;
+    line-height: 1.5;
+    z-index: 2;
+    box-sizing: border-box;
+    
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - 6px);
+      right: calc(100% - 1px);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 6px 6px 0;
+      border-color: transparent $color-main transparent transparent;
+    }
+  }
+  
+  &_loaded {
+    
+    .media {
+      
+      &__start {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      &__shadow {
+        opacity: 1;
+      }
+      
+      &__load {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  
+  &.is-error {
+    
+    .media__error {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

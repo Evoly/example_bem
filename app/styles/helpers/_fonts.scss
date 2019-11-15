@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/OpenSansLight.eot');
+  src:
+    url('../fonts/OpenSansLight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSansLight.woff2') format('woff2'),
+    url('../fonts/OpenSansLight.woff') format('woff'),
+    url('../fonts/OpenSansLight.ttf')  format('truetype'),
+    url('../fonts/OpenSansLight.svg#OpenSansLight') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/OpenSansRegular.eot');
+  src:
+    url('../fonts/OpenSansRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSansRegular.woff2') format('woff2'),
+    url('../fonts/OpenSansRegular.woff') format('woff'),
+    url('../fonts/OpenSansRegular.ttf')  format('truetype'),
+    url('../fonts/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/OpenSansSemibold.eot');
+  src:
+    url('../fonts/OpenSansSemibold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSansSemibold.woff2') format('woff2'),
+    url('../fonts/OpenSansSemibold.woff') format('woff'),
+    url('../fonts/OpenSansSemibold.ttf')  format('truetype'),
+    url('../fonts/OpenSansSemibold.svg#OpenSansSemibold') format('svg');
+}
+
+@font-face {
+  font-family: 'Engine';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/EngineRegular.eot');
+  src:
+    url('../fonts/EngineRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/EngineRegular.woff2') format('woff2'),
+    url('../fonts/EngineRegular.woff') format('woff'),
+    url('../fonts/EngineRegular.ttf')  format('truetype'),
+    url('../fonts/EngineRegular.svg#EngineRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'AmaticSC';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/AmaticSCBold.eot');
+  src:
+    url('../fonts/AmaticSCBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AmaticSCBold.woff2') format('woff2'),
+    url('../fonts/AmaticSCBold.woff') format('woff'),
+    url('../fonts/AmaticSCBold.ttf')  format('truetype'),
+    url('../fonts/AmaticSCBold.svg#AmaticSCBold') format('svg');
+}

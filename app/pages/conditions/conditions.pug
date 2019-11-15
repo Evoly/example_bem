@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Условия'
+
+block content
+  +inner()
+    +e.IMG(src='assets/images/bg-5.jpg').bg
+    +e.blackout
+    +e.scroll-hider
+      +e.scrollable._mob
+        +e.wrapper._mob
+          +header()
+          +conditions().__section
+  +footer()
+  +popups()

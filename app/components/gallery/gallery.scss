@@ -1,0 +1,152 @@
+.gallery {
+  display: block;
+  padding: 190px 0 52px;
+
+  @include screen('desktop-wide') {
+    padding: 190px 0 52px;
+  }
+
+  @include screen('tablet-wide') {
+    padding: 190px 0 60px;
+  }
+
+  @include screen('tablet') {
+    //padding: 136px 0 52px;
+  }
+  &__content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  &__heading {
+    @include heading-5;
+  }
+
+  &__text {
+    @include text-xs;
+    padding-top: 24px;
+    padding-bottom: 13px;
+    //max-width: 630px;
+    text-align: left;
+
+    @include screen('desktop') {
+      margin-top: 22px;
+    }
+
+    @include screen('tablet') {
+      margin-top: 13px;
+    }
+}
+&__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 13px;
+  padding-bottom: 30px;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  @include screen('phablet') {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+&__item-wrapper {
+  width: 33.3333%;
+  min-height: 187px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  @include screen('tablet') {
+      width: 50%;
+  }
+  @include screen('phablet') {
+      width: 100%;
+  }
+}
+&__item {
+  display: block;
+  width: 200px;
+  color: inherit;
+  @include screen('tablet') {
+    width: 100%;
+  }
+  @include screen('phablet') {
+      margin: 0 auto;
+  }
+}
+&__video {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  @include screen('tablet') {
+    height: auto;
+  }
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+&__play {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-red;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity $ease-main;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+&__icon_play {
+  width: 19px;
+  height: 25px;
+  fill: #fff;
+}
+&__viewed {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 15px;
+  @include text;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 1;
+
+  &.videocard_active {
+    display: block;
+  }
+}
+&__viewed-text {
+  display: block;
+  @include center-block;
+  opacity: .5;
+}
+&__title {
+  //width: 200px;
+  @include text-xs;
+  color: $color-yellow;
+  line-height: 1;
+  padding-top: 10px;
+}
+}

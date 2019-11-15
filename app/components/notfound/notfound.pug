@@ -1,0 +1,11 @@
+mixin notfound()
+  +b.notfound&attributes(attributes)
+    .container
+      +e.P.subtitle Страница не найдена
+      +e.H2.title Ошибка 404
+      +e.P.text Страница на которую Вы хотели перейти, не найдена.
+        br
+        |  Возможно, введен некорректный адрес или страница была удалена.
+        br
+        br
+        a(href='/')  Вернуться на главную

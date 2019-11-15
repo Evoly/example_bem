@@ -1,0 +1,35 @@
+@mixin link {
+  font-size: 15px;
+  font-weight: 600;
+  transition: fill $ease-main, color $ease-main, opacity $ease-main;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  
+  @include screen('tablet') {
+    font-size: 18px;
+  }
+}
+
+@mixin link-small {
+  font-size: 13px;
+  letter-spacing: -.01em;
+  
+  @include screen('tablet') {
+    font-size: 18px;
+    letter-spacing: .01em;
+  }
+}
+
+@mixin link-xsmall {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+@mixin link-disabled {
+  color: $color-border;
+  border-color: transparent;
+}
+
+@mixin link-dashed {
+  border-bottom-style: dashed;
+}
